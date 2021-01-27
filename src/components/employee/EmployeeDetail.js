@@ -21,7 +21,7 @@ export const EmployeeDetail = (props) => {
     }, [])
 
     useEffect(() => {
-        const animal = animals.find(a => a.locationId === parseInt(employee.locationId)) || {}
+        const animal = animals.find(a => a.id === parseInt(employee.animalId)) || {}
         setAnimal(animal)
     }, [animals])
 
@@ -29,7 +29,7 @@ export const EmployeeDetail = (props) => {
         const employee = employees.find(e => e.id === parseInt(props.match.params.employeeId)) || {}
         setEmployee(employee)
     }, [employees])
-debugger
+
     useEffect(() => {
         const location = locations.find(l => l.id === parseInt(employee.locationId)) || {}
         setLocation(location)
